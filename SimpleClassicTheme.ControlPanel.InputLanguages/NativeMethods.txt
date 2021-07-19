@@ -1,0 +1,4 @@
+﻿GetKeyboardLayoutList
+GetKeyboardLayoutName
+GetKeyboardState
+GetKeyboardType
