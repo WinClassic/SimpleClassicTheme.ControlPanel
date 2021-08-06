@@ -39,7 +39,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.deleteThemeButton = new System.Windows.Forms.Button();
             this.saveThemeAsButton = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.themeComboBox = new System.Windows.Forms.ComboBox();
             this.themeLabel = new System.Windows.Forms.Label();
             this.themesDescriptionLabel = new System.Windows.Forms.Label();
             this.desktopTabPage = new System.Windows.Forms.TabPage();
@@ -47,7 +47,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.desktopColorButton = new SimpleClassicTheme.ControlPanel.DisplayProperties.Controls.ColorButton();
             this.backgroundListView = new System.Windows.Forms.ListView();
             this.nameColumnHeader = new System.Windows.Forms.ColumnHeader();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.wallpaperImageList = new System.Windows.Forms.ImageList(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.customizeDesktopButton = new System.Windows.Forms.Button();
             this.positionComboBox = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.screenSaverTabPage = new System.Windows.Forms.TabPage();
             this.screenSaverPreviewPictureBox = new System.Windows.Forms.PictureBox();
             this.monitorPowerGroupBox = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.energyStarPictureBox = new System.Windows.Forms.PictureBox();
             this.monitorPowerButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.screenSaverGroupBox = new System.Windows.Forms.GroupBox();
@@ -76,6 +76,19 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.appearanceStyleLabel = new System.Windows.Forms.Label();
             this.appearanceColorSchemeLabel = new System.Windows.Forms.Label();
             this.appearancePreview = new SimpleClassicTheme.ControlPanel.DisplayProperties.Controls.AppearancePreview();
+            this.effectsTabPage = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.keyboardIndicatorsCheckBox = new System.Windows.Forms.CheckBox();
+            this.windowContentsCheckBox = new System.Windows.Forms.CheckBox();
+            this.highColorIconsCheckBox = new System.Windows.Forms.CheckBox();
+            this.largeIconsCheckBox = new System.Windows.Forms.CheckBox();
+            this.fontSmoothingCheckBox = new System.Windows.Forms.CheckBox();
+            this.useTransitionsCheckBox = new System.Windows.Forms.CheckBox();
+            this.desktopIconsGroupBox = new System.Windows.Forms.GroupBox();
+            this.desktopIconsListView = new System.Windows.Forms.ListView();
+            this.effectsImageList = new System.Windows.Forms.ImageList(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -93,10 +106,13 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.screenSaverTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.screenSaverPreviewPictureBox)).BeginInit();
             this.monitorPowerGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.energyStarPictureBox)).BeginInit();
             this.screenSaverGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.appearanceTabPage.SuspendLayout();
+            this.effectsTabPage.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.desktopIconsGroupBox.SuspendLayout();
             this.settingsTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +141,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             // applyButton
             // 
             this.applyButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.applyButton.Enabled = false;
             this.applyButton.Location = new System.Drawing.Point(317, 393);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
@@ -139,6 +156,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.tabControl.Controls.Add(this.desktopTabPage);
             this.tabControl.Controls.Add(this.screenSaverTabPage);
             this.tabControl.Controls.Add(this.appearanceTabPage);
+            this.tabControl.Controls.Add(this.effectsTabPage);
             this.tabControl.Controls.Add(this.settingsTabPage);
             this.tabControl.Location = new System.Drawing.Point(6, 7);
             this.tabControl.Name = "tabControl";
@@ -152,7 +170,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.themesTabPage.Controls.Add(this.label6);
             this.themesTabPage.Controls.Add(this.deleteThemeButton);
             this.themesTabPage.Controls.Add(this.saveThemeAsButton);
-            this.themesTabPage.Controls.Add(this.comboBox4);
+            this.themesTabPage.Controls.Add(this.themeComboBox);
             this.themesTabPage.Controls.Add(this.themeLabel);
             this.themesTabPage.Controls.Add(this.themesDescriptionLabel);
             this.themesTabPage.Location = new System.Drawing.Point(4, 22);
@@ -201,14 +219,14 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.saveThemeAsButton.Text = "&Save As...";
             this.saveThemeAsButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // themeComboBox
             // 
-            this.comboBox4.Enabled = false;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(11, 68);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(191, 21);
-            this.comboBox4.TabIndex = 2;
+            this.themeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.themeComboBox.FormattingEnabled = true;
+            this.themeComboBox.Location = new System.Drawing.Point(11, 68);
+            this.themeComboBox.Name = "themeComboBox";
+            this.themeComboBox.Size = new System.Drawing.Size(191, 21);
+            this.themeComboBox.TabIndex = 2;
             // 
             // themeLabel
             // 
@@ -260,16 +278,16 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             // 
             // desktopColorButton
             // 
-            this.desktopColorButton.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.desktopColorButton.Color = System.Drawing.SystemColors.Desktop;
             this.desktopColorButton.Location = new System.Drawing.Point(293, 304);
             this.desktopColorButton.Name = "desktopColorButton";
             this.desktopColorButton.Size = new System.Drawing.Size(75, 21);
             this.desktopColorButton.TabIndex = 8;
             this.desktopColorButton.UseVisualStyleBackColor = true;
+            this.desktopColorButton.ColorChanged += new System.EventHandler<System.EventArgs>(this.DesktopColorButton_ColorChanged);
             // 
             // backgroundListView
             // 
-            this.backgroundListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.backgroundListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nameColumnHeader});
             this.backgroundListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
@@ -280,7 +298,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.backgroundListView.Name = "backgroundListView";
             this.backgroundListView.ShowGroups = false;
             this.backgroundListView.Size = new System.Drawing.Size(272, 114);
-            this.backgroundListView.SmallImageList = this.imageList;
+            this.backgroundListView.SmallImageList = this.wallpaperImageList;
             this.backgroundListView.TabIndex = 7;
             this.backgroundListView.UseCompatibleStateImageBehavior = false;
             this.backgroundListView.View = System.Windows.Forms.View.Details;
@@ -291,18 +309,18 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.nameColumnHeader.Text = "Name";
             this.nameColumnHeader.Width = 268;
             // 
-            // imageList
+            // wallpaperImageList
             // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.imageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.wallpaperImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.wallpaperImageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.wallpaperImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(9, 186);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
+            this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 6;
             this.label8.Text = "Bac&kground:";
             // 
@@ -331,7 +349,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.positionLabel.AutoSize = true;
             this.positionLabel.Location = new System.Drawing.Point(293, 241);
             this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Size = new System.Drawing.Size(47, 13);
+            this.positionLabel.Size = new System.Drawing.Size(48, 13);
             this.positionLabel.TabIndex = 3;
             this.positionLabel.Text = "&Position:";
             // 
@@ -340,7 +358,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(293, 289);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "&Color:";
             // 
@@ -379,7 +397,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             // 
             // monitorPowerGroupBox
             // 
-            this.monitorPowerGroupBox.Controls.Add(this.pictureBox1);
+            this.monitorPowerGroupBox.Controls.Add(this.energyStarPictureBox);
             this.monitorPowerGroupBox.Controls.Add(this.monitorPowerButton);
             this.monitorPowerGroupBox.Controls.Add(this.label7);
             this.monitorPowerGroupBox.Location = new System.Drawing.Point(11, 266);
@@ -389,15 +407,15 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.monitorPowerGroupBox.TabStop = false;
             this.monitorPowerGroupBox.Text = "Energy saving features of monitor";
             // 
-            // pictureBox1
+            // energyStarPictureBox
             // 
-            this.pictureBox1.Image = global::SimpleClassicTheme.ControlPanel.DisplayProperties.Properties.Resources.EnergyStar;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.energyStarPictureBox.Image = global::SimpleClassicTheme.ControlPanel.DisplayProperties.Properties.Resources.EnergyStar;
+            this.energyStarPictureBox.Location = new System.Drawing.Point(29, 18);
+            this.energyStarPictureBox.Name = "energyStarPictureBox";
+            this.energyStarPictureBox.Size = new System.Drawing.Size(71, 42);
+            this.energyStarPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.energyStarPictureBox.TabIndex = 2;
+            this.energyStarPictureBox.TabStop = false;
             // 
             // monitorPowerButton
             // 
@@ -413,7 +431,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             // 
             this.label7.Location = new System.Drawing.Point(114, 17);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(229, 33);
+            this.label7.Size = new System.Drawing.Size(236, 36);
             this.label7.TabIndex = 0;
             this.label7.Text = "To adjust the power settings for your monitor,\r\nclick Power.";
             // 
@@ -431,22 +449,32 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.screenSaverGroupBox.Size = new System.Drawing.Size(356, 77);
             this.screenSaverGroupBox.TabIndex = 0;
             this.screenSaverGroupBox.TabStop = false;
-            this.screenSaverGroupBox.Text = "&Screen Saver";
+            this.screenSaverGroupBox.Text = "&Screen saver";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(297, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "minutes";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(249, 46);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(45, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(45, 21);
             this.numericUpDown1.TabIndex = 5;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown1.Value = new decimal(new int[] {
@@ -460,7 +488,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(217, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Wait:";
             // 
@@ -469,7 +497,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.passwordProtectedCheckBox.AutoSize = true;
             this.passwordProtectedCheckBox.Location = new System.Drawing.Point(9, 49);
             this.passwordProtectedCheckBox.Name = "passwordProtectedCheckBox";
-            this.passwordProtectedCheckBox.Size = new System.Drawing.Size(120, 17);
+            this.passwordProtectedCheckBox.Size = new System.Drawing.Size(122, 17);
             this.passwordProtectedCheckBox.TabIndex = 3;
             this.passwordProtectedCheckBox.Text = "Password protected";
             this.passwordProtectedCheckBox.UseVisualStyleBackColor = true;
@@ -555,7 +583,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.appearanceFontSizeLabel.AutoSize = true;
             this.appearanceFontSizeLabel.Location = new System.Drawing.Point(6, 304);
             this.appearanceFontSizeLabel.Name = "appearanceFontSizeLabel";
-            this.appearanceFontSizeLabel.Size = new System.Drawing.Size(52, 13);
+            this.appearanceFontSizeLabel.Size = new System.Drawing.Size(54, 13);
             this.appearanceFontSizeLabel.TabIndex = 3;
             this.appearanceFontSizeLabel.Text = "&Font size:";
             // 
@@ -564,7 +592,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.appearanceStyleLabel.AutoSize = true;
             this.appearanceStyleLabel.Location = new System.Drawing.Point(6, 198);
             this.appearanceStyleLabel.Name = "appearanceStyleLabel";
-            this.appearanceStyleLabel.Size = new System.Drawing.Size(113, 13);
+            this.appearanceStyleLabel.Size = new System.Drawing.Size(115, 13);
             this.appearanceStyleLabel.TabIndex = 2;
             this.appearanceStyleLabel.Text = "&Windows and buttons:";
             // 
@@ -573,7 +601,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.appearanceColorSchemeLabel.AutoSize = true;
             this.appearanceColorSchemeLabel.Location = new System.Drawing.Point(6, 252);
             this.appearanceColorSchemeLabel.Name = "appearanceColorSchemeLabel";
-            this.appearanceColorSchemeLabel.Size = new System.Drawing.Size(74, 13);
+            this.appearanceColorSchemeLabel.Size = new System.Drawing.Size(75, 13);
             this.appearanceColorSchemeLabel.TabIndex = 1;
             this.appearanceColorSchemeLabel.Text = "&Color scheme:";
             // 
@@ -587,6 +615,149 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.appearancePreview.Name = "appearancePreview";
             this.appearancePreview.Size = new System.Drawing.Size(351, 189);
             this.appearancePreview.TabIndex = 0;
+            // 
+            // effectsTabPage
+            // 
+            this.effectsTabPage.Controls.Add(this.groupBox2);
+            this.effectsTabPage.Controls.Add(this.desktopIconsGroupBox);
+            this.effectsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.effectsTabPage.Name = "effectsTabPage";
+            this.effectsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.effectsTabPage.Size = new System.Drawing.Size(378, 354);
+            this.effectsTabPage.TabIndex = 5;
+            this.effectsTabPage.Text = "Effects";
+            this.effectsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.keyboardIndicatorsCheckBox);
+            this.groupBox2.Controls.Add(this.windowContentsCheckBox);
+            this.groupBox2.Controls.Add(this.highColorIconsCheckBox);
+            this.groupBox2.Controls.Add(this.largeIconsCheckBox);
+            this.groupBox2.Controls.Add(this.fontSmoothingCheckBox);
+            this.groupBox2.Controls.Add(this.useTransitionsCheckBox);
+            this.groupBox2.Location = new System.Drawing.Point(11, 172);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(357, 161);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Visual effects";
+            // 
+            // keyboardIndicatorsCheckBox
+            // 
+            this.keyboardIndicatorsCheckBox.AutoSize = true;
+            this.keyboardIndicatorsCheckBox.Enabled = false;
+            this.keyboardIndicatorsCheckBox.Location = new System.Drawing.Point(12, 134);
+            this.keyboardIndicatorsCheckBox.Name = "keyboardIndicatorsCheckBox";
+            this.keyboardIndicatorsCheckBox.Size = new System.Drawing.Size(302, 17);
+            this.keyboardIndicatorsCheckBox.TabIndex = 5;
+            this.keyboardIndicatorsCheckBox.Text = "Hide keyboard navigation indicators until I use the Alt key";
+            this.keyboardIndicatorsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // windowContentsCheckBox
+            // 
+            this.windowContentsCheckBox.AutoSize = true;
+            this.windowContentsCheckBox.Location = new System.Drawing.Point(12, 111);
+            this.windowContentsCheckBox.Name = "windowContentsCheckBox";
+            this.windowContentsCheckBox.Size = new System.Drawing.Size(208, 17);
+            this.windowContentsCheckBox.TabIndex = 4;
+            this.windowContentsCheckBox.Text = "Show window contents while dragging";
+            this.windowContentsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // highColorIconsCheckBox
+            // 
+            this.highColorIconsCheckBox.AutoSize = true;
+            this.highColorIconsCheckBox.Checked = true;
+            this.highColorIconsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.highColorIconsCheckBox.Enabled = false;
+            this.highColorIconsCheckBox.Location = new System.Drawing.Point(12, 88);
+            this.highColorIconsCheckBox.Name = "highColorIconsCheckBox";
+            this.highColorIconsCheckBox.Size = new System.Drawing.Size(192, 17);
+            this.highColorIconsCheckBox.TabIndex = 3;
+            this.highColorIconsCheckBox.Text = "Show icons using all possible colors";
+            this.highColorIconsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // largeIconsCheckBox
+            // 
+            this.largeIconsCheckBox.AutoSize = true;
+            this.largeIconsCheckBox.Checked = true;
+            this.largeIconsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.largeIconsCheckBox.Enabled = false;
+            this.largeIconsCheckBox.Location = new System.Drawing.Point(12, 65);
+            this.largeIconsCheckBox.Name = "largeIconsCheckBox";
+            this.largeIconsCheckBox.Size = new System.Drawing.Size(98, 17);
+            this.largeIconsCheckBox.TabIndex = 2;
+            this.largeIconsCheckBox.Text = "Use large icons";
+            this.largeIconsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // fontSmoothingCheckBox
+            // 
+            this.fontSmoothingCheckBox.AutoSize = true;
+            this.fontSmoothingCheckBox.Location = new System.Drawing.Point(12, 43);
+            this.fontSmoothingCheckBox.Name = "fontSmoothingCheckBox";
+            this.fontSmoothingCheckBox.Size = new System.Drawing.Size(170, 17);
+            this.fontSmoothingCheckBox.TabIndex = 1;
+            this.fontSmoothingCheckBox.Text = "Smooth edges of screen fonts";
+            this.fontSmoothingCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // useTransitionsCheckBox
+            // 
+            this.useTransitionsCheckBox.AutoSize = true;
+            this.useTransitionsCheckBox.Location = new System.Drawing.Point(12, 20);
+            this.useTransitionsCheckBox.Name = "useTransitionsCheckBox";
+            this.useTransitionsCheckBox.Size = new System.Drawing.Size(239, 17);
+            this.useTransitionsCheckBox.TabIndex = 0;
+            this.useTransitionsCheckBox.Text = "Use transition effects for menus and tooltips";
+            this.useTransitionsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // desktopIconsGroupBox
+            // 
+            this.desktopIconsGroupBox.Controls.Add(this.desktopIconsListView);
+            this.desktopIconsGroupBox.Controls.Add(this.button4);
+            this.desktopIconsGroupBox.Controls.Add(this.button1);
+            this.desktopIconsGroupBox.Location = new System.Drawing.Point(11, 8);
+            this.desktopIconsGroupBox.Name = "desktopIconsGroupBox";
+            this.desktopIconsGroupBox.Size = new System.Drawing.Size(356, 153);
+            this.desktopIconsGroupBox.TabIndex = 0;
+            this.desktopIconsGroupBox.TabStop = false;
+            this.desktopIconsGroupBox.Text = "Desktop icons";
+            // 
+            // desktopIconsListView
+            // 
+            this.desktopIconsListView.HideSelection = false;
+            this.desktopIconsListView.LargeImageList = this.effectsImageList;
+            this.desktopIconsListView.Location = new System.Drawing.Point(12, 20);
+            this.desktopIconsListView.MultiSelect = false;
+            this.desktopIconsListView.Name = "desktopIconsListView";
+            this.desktopIconsListView.ShowGroups = false;
+            this.desktopIconsListView.Size = new System.Drawing.Size(332, 91);
+            this.desktopIconsListView.TabIndex = 2;
+            this.desktopIconsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // effectsImageList
+            // 
+            this.effectsImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.effectsImageList.ImageSize = new System.Drawing.Size(32, 32);
+            this.effectsImageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(253, 117);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 24);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Default Icon";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(156, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 24);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Change Icon...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // settingsTabPage
             // 
@@ -632,7 +803,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.extendMonitorCheckBox.Enabled = false;
             this.extendMonitorCheckBox.Location = new System.Drawing.Point(6, 269);
             this.extendMonitorCheckBox.Name = "extendMonitorCheckBox";
-            this.extendMonitorCheckBox.Size = new System.Drawing.Size(246, 17);
+            this.extendMonitorCheckBox.Size = new System.Drawing.Size(252, 17);
             this.extendMonitorCheckBox.TabIndex = 5;
             this.extendMonitorCheckBox.Text = "Extend my Windows desktop onto this monitor.";
             this.extendMonitorCheckBox.UseVisualStyleBackColor = true;
@@ -643,7 +814,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.primaryMonitorCheckBox.Enabled = false;
             this.primaryMonitorCheckBox.Location = new System.Drawing.Point(6, 251);
             this.primaryMonitorCheckBox.Name = "primaryMonitorCheckBox";
-            this.primaryMonitorCheckBox.Size = new System.Drawing.Size(207, 17);
+            this.primaryMonitorCheckBox.Size = new System.Drawing.Size(213, 17);
             this.primaryMonitorCheckBox.TabIndex = 4;
             this.primaryMonitorCheckBox.Text = "Use this device as the primary monitor.";
             this.primaryMonitorCheckBox.UseVisualStyleBackColor = true;
@@ -684,7 +855,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             this.displayLabel.Enabled = false;
             this.displayLabel.Location = new System.Drawing.Point(6, 122);
             this.displayLabel.Name = "displayLabel";
-            this.displayLabel.Size = new System.Drawing.Size(44, 13);
+            this.displayLabel.Size = new System.Drawing.Size(45, 13);
             this.displayLabel.TabIndex = 0;
             this.displayLabel.Text = "Display:";
             // 
@@ -726,12 +897,16 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
             ((System.ComponentModel.ISupportInitialize)(this.screenSaverPreviewPictureBox)).EndInit();
             this.monitorPowerGroupBox.ResumeLayout(false);
             this.monitorPowerGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.energyStarPictureBox)).EndInit();
             this.screenSaverGroupBox.ResumeLayout(false);
             this.screenSaverGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.appearanceTabPage.ResumeLayout(false);
             this.appearanceTabPage.PerformLayout();
+            this.effectsTabPage.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.desktopIconsGroupBox.ResumeLayout(false);
             this.settingsTabPage.ResumeLayout(false);
             this.settingsTabPage.PerformLayout();
             this.ResumeLayout(false);
@@ -760,7 +935,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button deleteThemeButton;
         private System.Windows.Forms.Button saveThemeAsButton;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox themeComboBox;
         private System.Windows.Forms.Label themeLabel;
         private System.Windows.Forms.Label themesDescriptionLabel;
         private System.Windows.Forms.ListView backgroundListView;
@@ -786,16 +961,29 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Forms
         private System.Windows.Forms.Label displayLabel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.ImageList wallpaperImageList;
         private System.Windows.Forms.ColumnHeader nameColumnHeader;
         private System.Windows.Forms.PictureBox desktopMonitorPictureBox;
         private System.Windows.Forms.OpenFileDialog wallpaperOpenFileDialog;
         private System.Windows.Forms.PictureBox screenSaverPreviewPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox energyStarPictureBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox passwordProtectedCheckBox;
+        private System.Windows.Forms.TabPage effectsTabPage;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox keyboardIndicatorsCheckBox;
+        private System.Windows.Forms.CheckBox windowContentsCheckBox;
+        private System.Windows.Forms.CheckBox highColorIconsCheckBox;
+        private System.Windows.Forms.CheckBox largeIconsCheckBox;
+        private System.Windows.Forms.CheckBox fontSmoothingCheckBox;
+        private System.Windows.Forms.CheckBox useTransitionsCheckBox;
+        private System.Windows.Forms.GroupBox desktopIconsGroupBox;
+        private System.Windows.Forms.ListView desktopIconsListView;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ImageList effectsImageList;
     }
 }
 

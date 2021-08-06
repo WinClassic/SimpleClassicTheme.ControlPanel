@@ -19,7 +19,7 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,9 +73,48 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EnergyStarXP {
+            get {
+                object obj = ResourceManager.GetObject("EnergyStarXP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Monitor {
             get {
                 object obj = ResourceManager.GetObject("Monitor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monitor power.
+        /// </summary>
+        internal static string MonitorPower_GroupBox {
+            get {
+                return ResourceManager.GetString("MonitorPower_GroupBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To adjust monitor power settings and save energy,
+        ///click Power..
+        /// </summary>
+        internal static string MonitorPower_Label {
+            get {
+                return ResourceManager.GetString("MonitorPower_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MonitorXP {
+            get {
+                object obj = ResourceManager.GetObject("MonitorXP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,0 +1,4 @@
+﻿PrivateExtractIcons
+PickIconDlg
+SystemParametersInfo
+Control_RunDLL

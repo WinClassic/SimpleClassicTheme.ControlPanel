@@ -34,7 +34,8 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties
         {
             get
             {
-                return int.Parse((string)desktopKey.GetValue("ScreenSaverTimeOut", "15"));
+                var defaultValue = (15 * 60).ToString();
+                return int.Parse((string)desktopKey.GetValue("ScreenSaverTimeOut", defaultValue));
             }
             set
             {
