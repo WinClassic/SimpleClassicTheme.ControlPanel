@@ -65,8 +65,25 @@ namespace SimpleClassicTheme.ControlPanel.DisplayProperties.Controls
             //colorSurface.Inflate(-1, -1);
             pevent.Graphics.DrawRectangle(SystemPens.ControlText, colorSurface);
 
-            var dividerRect = new Rectangle(Width - 12, 4, 2, colorSurface.Height);
-            ControlPaint.DrawBorder3D(pevent.Graphics, dividerRect, Border3DStyle.Flat);
+            var dividerX = Width - 12;
+            var dividerX2 = dividerX + 1;
+            var dividerY = 3;
+            var dividerY2 = dividerY + colorSurface.Height;
+
+            pevent.Graphics.DrawLine(SystemPens.ControlDark, dividerX, dividerY, dividerX, dividerY2);
+            pevent.Graphics.DrawLine(SystemPens.ControlLightLight, dividerX2, dividerY, dividerX2, dividerY2);
+
+            var downOffsetY = (Height / 2f) - 1.5f;
+            var downOffset = new Point(Width - 9, (int)downOffsetY);
+
+            var downPoints = new Point[]
+            {
+                downOffset,
+                new Point(downOffset.X + 5, downOffset.Y),
+                new Point(downOffset.X + 2, downOffset.Y + 3),
+            };
+
+            pevent.Graphics.FillPolygon(SystemBrushes.ControlText, downPoints);
         }
     }
 }
